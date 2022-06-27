@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate')%>
+
+  <div class="text-white bg-dark pops">
+    <h1 class="text-center">New Destination</h1>
+      <form action="/destinations" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3"> <label class="form-label mb-0" for="name">Title</label>
+          <input class="form-control mb-2" type="text" id="name" name="destination[title]" required>
+          <div class="invalid-feedback">Oops! You forgot to name it!</div>
+        </div>
+
+        <div class="mb-3"><label class="form-label mb-0" for="place">Location</label>
+          <input class="form-control mb-2" type="text" id="place" name="destination[location]" required>
+          <div class="invalid-feedback">Oops! You forgot to mention the Location!</div>
+        </div>
+        <!-- <div class="mb-3"><label class="form-label mb-0" for="image">Image URL</label>
+          <input class="form-control mb-2" type="text" id="image" name="Campground[image]" required>
+          <div class="invalid-feedback">Provide a URL for the image</div>
+        </div> -->
+        <label class="form-label mb-0" for="image">Add Images</label>
+        <input class="form-control mb-2" type="file" id="image" name="image" multiple>
+        <label class="form-label mb-0" for="descirption">Description</label>
+        <textarea class="form-control mb-2 text-area" type="text" id="description" name="destination[description]"
+          required></textarea>
+        <div class="invalid-feedback">Give a description of the place</div>
+
+        <div class="d-grid mt-5">
+          <button class="btn btn-success text-white">Add Destination</button>
+      </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="/javascript/validator.js"></script>
